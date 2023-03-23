@@ -1,0 +1,249 @@
+*{
+    text-decoration: none ;
+    list-style: none;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+    font-size: 200%;
+    margin: 0;
+}
+h3{
+    text-align: center;
+    font-size: 150%;
+    margin: 0;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.color_to_green{
+    color: #01BB77;
+}
+
+/* Navbar */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    height: 50%;
+}
+
+.navbar .logo{
+    margin-left: 5%;
+}
+.navbar .logo a{
+    text-decoration: none;
+}
+.navbar .logo a img{
+    /* height: 1000px; */
+    width: 100px;
+}
+
+.navbar .logo a{
+    color: black;
+}
+
+.navbarlinks ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbarlinks li{
+    list-style:none;
+    transition: 0.4s ease-in;
+}
+
+.navbarlinks li a{
+    text-decoration: none;
+    color:black;
+    padding: 1rem;
+    display: block;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+}
+
+.navbarlinks li:hover{
+    background-color: #00c8fd;
+    color: white;
+    transition: 0.4s ease-in;
+}
+.navbarlinks li:hover a{
+    color: white;
+    transition: 0.4s ease-in;
+}
+
+.toggle-button{
+    position: absolute;
+    padding: 0.2rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1.1rem;
+    width: 1.5rem;
+}
+
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+}
+
+@media (max-width:800px){
+    .toggle-button{
+        display: flex;
+    }
+    .navbarlinks{
+        display: none;
+        width: 100%;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbarlinks ul{ 
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbarlinks ul li{
+        text-align: center;
+    }
+    .navbarlinks ul li a{
+        padding: 0.5rem 1rem;
+    }
+    .navbarlinks.active{
+        display: flex;
+    }
+}
+/* @media screen and (max-width: 1050px) {
+    .top-container{
+        background: url("../assets/images/background_image_1.jpeg");
+        width: 100vw;
+        height: 600px;
+        background-size: cover;
+    } 
+} */
+
+
+/* Footer */
+.footer{
+    background-color: #000;
+    color: white;
+    /* margin-bottom: 0;  */
+    /* bottom: 0; */
+    margin-top: auto;
+    /* position:absolute; */
+    /* position: fixed; */
+    width: 100%;
+}
+.footer a{
+    text-decoration: none;
+    color: white;
+}
+.footer a:hover{
+    color: #f8ce0b;
+}
+.footer .upperbox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.footer .message{
+    text-align: center;
+    margin: 0;
+    padding: 2%;
+}
+.footer .social-media a{
+    text-decoration:  none;
+}
+
+.footer .upperpart{
+    display: flex;
+    flex-direction: column;
+}
+.footer .upperpart .totalpart{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.fa-facebook{
+    color: white;
+}
+.fa-twitter{
+    color: white;
+    /* color: #1DA1F2; */
+}
+.fa-youtube{
+    color: white;
+    /* color: #FF0000; */
+}
+.fa-instagram{
+    color: white;
+    /* color: #E1306C; */
+}
+.fa-linkedin{
+    color: white;
+    /* color: #0077b5; */
+}
+
+
+
+/* About us page */
+.last-container{
+    margin: 5%;
+}
+.last-container .famous-investors{
+    display: flex;
+    justify-content: space-around;
+}
+.last-container .famous-investors img{
+    border-radius: 50%;
+    width: 15%;
+    /* width: 20%; */
+
+    /* height: 10%; */
+    /* overflow: hidden; */
+}
+.last-container .team-members{
+    display: flex;
+    justify-content: space-around;
+}
+.last-container .team-members .card-name{
+    text-align: center;
+}
+.last-container .team-members .card-name img{
+    border-radius: 60%;
+    width: 30%;
+    /* padding-left: 10%; */
+    /* width: 20%; */
+
+    /* height: 10%; */
+    overflow: hidden;
+}
+/* .last-container .team-members img{
+    border-radius: 60%;
+    width: 10%;
+
+    /* width: 20%; */
+
+    /* height: 10%; */
+    /* overflow: hidden; */
+/* }  */
