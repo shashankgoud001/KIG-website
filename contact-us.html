@@ -27,7 +27,7 @@
         <div class="logo">
             <a href="index.html"><img src="./assets/images/kig_logo_no_bg.png" alt="KIG"></a>
         </div>
-        <a href="#" class="toggle-button">
+        <a href="javascript:void(0);" class="toggle-button" onclick="togglefunction()">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
@@ -41,6 +41,15 @@
             </ul>
         </div>
     </nav>
+    <script>
+        function togglefunction(){
+        const toggleButton = document.getElementsByClassName("toggle-button")[0];
+        const navbarlinks = document.getElementsByClassName("navbarlinks")[0];
+        toggleButton.addEventListener('click', () => {
+        navbarlinks.classList.toggle('active');
+    });
+}
+    </script>
         <div class="front">
 
             <h1>Contact</h1>

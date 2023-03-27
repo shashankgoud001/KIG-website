@@ -546,6 +546,7 @@ main *::before {
 .card-front__heading {
   font-size: 1.5em;
   margin-top: .25em;
+  text-align: center;
 }
 
 /* Main heading for inside page */
@@ -697,25 +698,14 @@ main *::before {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
+  /* flex-direction: row; */
   height: 100%;
   justify-content: space-evenly;
   overflow: hidden;
   padding: 1em;
 }
 
-/* @media screen and (max-width: 870px) {
-    .card-area{
-        align-items: center;
-        align-content: center;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        height: 100%;
-        justify-content: space-between;
-        /* overflow: hidden; */
-        /* padding: 1rem; */
-    /* } */
-/* } */ 
+
 
 /* Card ============================================*/
 
@@ -723,10 +713,12 @@ main *::before {
 .card-section {
   align-items: center;
   display: flex;
-  height: 50%;
+  height: 75%;
+  
   justify-content: center;
   overflow: hidden;
-  width: 50%;
+  width: 25%;
+  padding: 2%;
 }
 
 /* A container to hold the flip card and the inside page */
@@ -736,9 +728,86 @@ main *::before {
   height: 15em;
   position: relative;
   transition: all 1s ease;
-  width: 15em;
+  width: 20%;
 }
 
+@media screen and (max-width: 780px) {
+      .card{
+        /* display: none; */
+        background-color: rgba(0,0,0, .05);
+        box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.5);
+        /* height: 15em; */
+        position: relative;
+        transition: all 1s ease;
+        /* width: 200%; */
+      }
+
+} 
+@media screen and (max-width: 850px) {
+    .card-area{
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        /* overflow: hidden; */
+        padding: 0;
+        /* padding: 1em; */
+     }
+     .card-section {
+        align-items: center;
+        display: flex;
+        height: 50%;
+        justify-content: center;
+        /* overflow: hidden; */
+        width: 150%;
+        padding: 2% 2% 2% 2%;
+      }
+      .card{
+        background-color: rgba(0,0,0, .05);
+        box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.5);
+        height: 15em;
+        position: relative;
+        transition: all 1s ease;
+        width: 100%;
+      }
+      .card-front__heading {
+        font-size: 100%;
+        margin-top: .25em;
+        text-align: center;
+      }
+      
+} 
+@media screen and (max-width: 1400px) {
+    .card-area{
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        justify-content: space-between;
+        overflow: hidden;
+        padding: 5%;
+     }
+     .card-section {
+        align-items: center;
+        display: flex;
+        height: 50%;
+        justify-content: center;
+        overflow: hidden;
+        width: 50%;
+        padding: 2%;
+      }
+      .card {
+        background-color: rgba(0,0,0, .05);
+        box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0,0,0,0.5);
+        height: 15em;
+        position: relative;
+        transition: all 1s ease;
+        width: 20%;
+      }
+      
+} 
 /* Flip card - covering both the front and inside front page */
 
 /* An outer container to hold the flip card. This excludes the inside page */
@@ -900,3 +969,157 @@ main *::before {
   box-shadow: inset 1em 0px 5em -2.5em rgba(0,0,0,0.1);
 }
 
+
+
+
+
+/* ------------------------- */
+article {
+    --img-scale: 1.001;
+    --title-color: black;
+    --link-icon-translate: -20px;
+    --link-icon-opacity: 0;
+    position: relative;
+    border-radius: 16px;
+    box-shadow: none;
+    background: #fff;
+    transform-origin: center;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+  }
+  
+  article a::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline: 0;
+    cursor: pointer;
+    content: "";
+  }
+  
+  /* basic article elements styling */
+  article h2 {
+    margin: 0 0 18px 0;
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.9em;
+    letter-spacing: 0.06em;
+    color: var(--title-color);
+    transition: color 0.3s ease-out;
+  }
+  
+  figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  
+  article img {
+    max-width: 100%;
+    transform-origin: center;
+    transform: scale(var(--img-scale));
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .article-body {
+    padding: 5%;
+  }
+  
+  article a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #28666e;
+  }
+  
+  article a:focus {
+    outline: 1px dotted #28666e;
+  }
+  
+  article a .icon {
+    min-width: 5%;
+    width: 5%;
+    height: 5%;
+    margin-left: 5%;
+    transform: translateX(var(--link-icon-translate));
+    opacity: var(--link-icon-opacity);
+    transition: all 0.3s;
+  }
+  
+  /* using the has() relational pseudo selector to update our custom properties */
+  article:has(:hover, :focus) {
+    --img-scale: 1.1;
+    --title-color: #28666e;
+    --link-icon-translate: 0;
+    --link-icon-opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  }
+  
+  
+  /************************ 
+  Generic layout (demo looks)
+  **************************/
+  
+  .articles *,
+  .articles *::before,
+  .articles *::after {
+    box-sizing: border-box;
+  }
+  
+  /* body {
+    margin: 0;
+    padding: 48px 0;
+    font-family: "Figtree", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    background-image: linear-gradient(45deg, #7c9885, #b5b682);
+    min-height: 100vh;
+  } */
+  
+  .articles {
+    display: grid;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 5%;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 5%;
+  }
+  
+  @media screen and (max-width: 960px) {
+    article {
+      container: card/inline-size;
+    }
+    .article-body p {
+      display: none;
+    }
+  }
+  
+  @container card (min-width: 380px) {
+    .article-wrapper {
+      display: grid;
+      grid-template-columns: 20% 1fr;
+      gap: 3%;
+    }
+    .article-body {
+      padding-left: 0;
+    }
+    figure {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    figure img {
+      height: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+  }
+  
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+  }
